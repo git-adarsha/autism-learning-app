@@ -1,24 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Food Chain</title>
-  </head>
-  <body>
-    <h2>Food Chain Game</h2>
+<head>
+  <title>Food Chain</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <button onclick="step('plant')">Plant</button>
-    <button onclick="step('rabbit')">Rabbit</button>
-    <button onclick="step('fox')">Fox</button>
+<div class="card">
+  <h2>Learning Module: Food Chain</h2>
+  <p>Correct order:</p>
+  <p>Plant → Rabbit → Fox</p>
 
-    <p id="chain"></p>
+  <button onclick="gain()">I understand</button>
+</div>
 
-    <script>
-      let chain = [];
+<script>
+function gain() {
+  let points = Number(localStorage.getItem("points")) || 0;
+  localStorage.setItem("points", points + 5);
+  alert("Well done!");
+}
+</script>
 
-      function step(item) {
-        chain.push(item);
-        document.getElementById("chain").innerText = chain.join(" → ");
-      }
-    </script>
-  </body>
+</body>
 </html>
