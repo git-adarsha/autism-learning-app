@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Food Chain</title>
+  </head>
+  <body>
+    <h2>Food Chain Game</h2>
+
+    <button onclick="step('plant')">Plant</button>
+    <button onclick="step('rabbit')">Rabbit</button>
+    <button onclick="step('fox')">Fox</button>
+
+    <p id="chain"></p>
+
+    <script>
+      let chain = [];
+
+      function step(item) {
+        chain.push(item);
+        document.getElementById("chain").innerText = chain.join(" → ");
+      }
+    </script>
+  </body>
+</html>

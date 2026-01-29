@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Solar System</title>
+  </head>
+  <body>
+    <h2>Solar System Game</h2>
+
+    <p>Click a planet to learn.</p>
+
+    <button onclick="show('Mercury')">Mercury</button>
+    <button onclick="show('Earth')">Earth</button>
+    <button onclick="show('Mars')">Mars</button>
+
+    <p id="info"></p>
+
+    <script>
+      function show(planet) {
+        const facts = {
+          Mercury: "Mercury is closest to the Sun.",
+          Earth: "Earth has life.",
+          Mars: "Mars is called the red planet.",
+        };
+        document.getElementById("info").innerText = facts[planet];
+      }
+    </script>
+  </body>
+</html>
