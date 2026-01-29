@@ -1,31 +1,43 @@
-<!doctype html>
-<html>
-  <head>
-    <title>Learning Helper</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Learning Helper</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assistive Learning App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <p>Choose an activity:</p>
+<div id="nameScreen" class="card">
+  <h1>Welcome</h1>
+  <p>Please enter your name to begin.</p>
+  <input id="username" placeholder="Your name">
+  <button onclick="startApp()">Start</button>
+</div>
 
-    <ul>
-      <li><a href="games/color.html">🎨 Color Mixing Game</a></li>
-      <li><a href="games/solar.html">☀️ Solar System Game</a></li>
-      <li><a href="games/food.html">🍃 Food Chain Game</a></li>
-    </ul>
+<div id="app" class="hidden">
+  <header>
+    <h1>Hello, <span id="displayName"></span></h1>
+    <p>Choose a learning activity.</p>
+  </header>
 
-    <h2>Help Assistant</h2>
+  <section class="card">
+    <h2>Your Learning Tree</h2>
+    <div id="tree">🌱</div>
+    <p>Points: <span id="points">0</span></p>
+  </section>
 
-    <input id="helpInput" placeholder="Type your problem" />
-    <button onclick="help()">Ask</button>
+  <section class="card">
+    <h2>Learning Modules</h2>
+    <a href="solar.html" class="game-link">☀️ Solar System</a>
+    <a href="color.html" class="game-link">🎨 Color Mixing</a>
+    <a href="food.html" class="game-link">🌱 Food Chain</a>
+  </section>
+</div>
 
-    <div id="helpReply"></div>
+<script src="assistant.js"></script>
 
-    <script src="assistant.js"></script>
+<!-- TIDIO CHATBOT -->
+<script src="//code.tidio.co/YOUR_TIDIO_ID.js" async></script>
 
-    <!-- TIDIO CHATBOT -->
-    <script src="//code.tidio.co/ev5mcrleg3kmrdri2zz3v3zyemhvhqja.js" async></script>
-  </body>
+</body>
 </html>
-
