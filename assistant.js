@@ -1,16 +1,21 @@
-function help() {
-  const text = document.getElementById("helpInput").value.toLowerCase();
-  let reply = "I am not sure. Try words like confused, stuck, or help.";
+function startApp() {
+  const name = document.getElementById("username").value.trim();
+  if (!name) return;
 
-  if (text.includes("confused")) {
-    reply = "It is okay to feel confused. Read the question slowly.";
-  } 
-  else if (text.includes("stuck")) {
-    reply = "Break the task into smaller steps.";
-  } 
-  else if (text.includes("help")) {
-    reply = "Choose one game from the list above.";
-  }
+  localStorage.setItem("name", name);
+  document.getElementById("displayName").innerText = name;
+  document.getElementById("nameScreen").classList.add("hidden");
+  document.getElementById("app").classList.remove("hidden");
 
-  document.getElementById("helpReply").innerText = reply;
+  updateProgress();
+}
+
+function updateProgress() {
+  let points = Number(localStorage.getItem("points")) || 0;
+  document.getElementById("points").innerText = points;
+
+  const tree = document.getElementById("tree");
+  if (points < 10) tree.innerText = "🌱";
+  else if (points < 20) tree.innerText = "🌿";
+  else if (points < 30) tree.innerText = "🌳";
 }
