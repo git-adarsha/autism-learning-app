@@ -1,28 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Solar System</title>
-  </head>
-  <body>
-    <h2>Solar System Game</h2>
+<head>
+  <title>Solar System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <p>Click a planet to learn.</p>
+<div class="card">
+  <h2>Learning Module: Solar System</h2>
+  <p>The planets move around the Sun in a fixed order.</p>
+  <p>Mercury → Venus → Earth → Mars</p>
 
-    <button onclick="show('Mercury')">Mercury</button>
-    <button onclick="show('Earth')">Earth</button>
-    <button onclick="show('Mars')">Mars</button>
+  <button onclick="correct()">I understand</button>
+</div>
 
-    <p id="info"></p>
+<script>
+function correct() {
+  let points = Number(localStorage.getItem("points")) || 0;
+  localStorage.setItem("points", points + 5);
+  alert("Good job! You earned points.");
+}
+</script>
 
-    <script>
-      function show(planet) {
-        const facts = {
-          Mercury: "Mercury is closest to the Sun.",
-          Earth: "Earth has life.",
-          Mars: "Mars is called the red planet.",
-        };
-        document.getElementById("info").innerText = facts[planet];
-      }
-    </script>
-  </body>
+</body>
 </html>
