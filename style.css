@@ -1,19 +1,41 @@
 body {
   font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
   padding: 20px;
+  color: #333;
 }
 
-input {
-  padding: 8px;
+.card {
+  background: #ffffff;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.hidden {
+  display: none;
+}
+
+button, input {
+  padding: 10px;
+  font-size: 1rem;
   margin-top: 10px;
 }
 
-button {
-  padding: 8px;
-  margin-left: 5px;
+.game-link {
+  display: block;
+  margin: 10px 0;
+  padding: 12px;
+  background: #e6eef7;
+  text-decoration: none;
+  color: #000;
+  border-radius: 6px;
 }
 
-#helpReply {
-  margin-top: 15px;
-  font-weight: bold;
+#tree {
+  font-size: 3rem;
+  text-align: center;
 }
