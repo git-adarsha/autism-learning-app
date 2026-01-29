@@ -1,37 +1,31 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Color Mixing</title>
-  </head>
-  <body>
-    <h2>Color Mixing Game</h2>
+<head>
+  <title>Color Mixing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    <button onclick="mix('red')">Red</button>
-    <button onclick="mix('blue')">Blue</button>
-    <button onclick="mix('yellow')">Yellow</button>
+<div class="card">
+  <h2>Learning Module: Color Mixing</h2>
+  <p>Red and Blue make which color?</p>
 
-    <p id="result"></p>
+  <button onclick="check(true)">Purple</button>
+  <button onclick="check(false)">Green</button>
+  <button onclick="check(false)">Orange</button>
+</div>
 
-    <script>
-      let selected = [];
+<script>
+function check(correct) {
+  if (correct) {
+    let points = Number(localStorage.getItem("points")) || 0;
+    localStorage.setItem("points", points + 5);
+    alert("Correct!");
+  } else {
+    alert("Try again.");
+  }
+}
+</script>
 
-      function mix(color) {
-        selected.push(color);
-
-        if (selected.length === 2) {
-          let output =
-            selected.includes("red") && selected.includes("blue")
-              ? "Purple"
-              : selected.includes("red") && selected.includes("yellow")
-                ? "Orange"
-                : selected.includes("blue") && selected.includes("yellow")
-                  ? "Green"
-                  : "Unknown";
-
-          document.getElementById("result").innerText = "Result: " + output;
-          selected = [];
-        }
-      }
-    </script>
-  </body>
+</body>
 </html>
