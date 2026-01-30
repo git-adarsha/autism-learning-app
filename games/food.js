@@ -1,7 +1,10 @@
-tidioChatApi.setVisitorData({
+window.setTimeout(() => {
+    
+    console.log("setting data")
+    tidioChatApi.setVisitorData({
     email: 'christopher.test@gmail.com',
-    name: 'adarsha',
+    name: 'christopher',
 });
+    window.tidioChatApi.messageFromVisitor("I am playing food chain image ordering game please help me");
 
-replace in food.js
-
+}, 5000)
