@@ -1,6 +1,7 @@
 tidioChatApi.setVisitorData({
     email: 'christopher.test@gmail.com',
-    name: 'christopher',
+    name: 'adarsha',
 });
 
 replace in food.js
+
