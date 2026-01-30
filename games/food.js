@@ -1,9 +1,6 @@
-window.setTimeout(() => {
-  console.log("setting data");
+tidioChatApi.setVisitorData({
+    email: 'christopher.test@gmail.com',
+    name: 'christopher',
+});
 
-  window.tidioChatApi.setVisitorData({
-    user: "Test",
-    game: "make images in order"
-  });
-
-}, 5000);
+replace in food.js
